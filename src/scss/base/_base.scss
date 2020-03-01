@@ -1,0 +1,18 @@
+::-moz-selection {
+  color: #fff;
+  background: $primary-color;
+}
+
+::selection {
+  color: #fff;
+  background: $primary-color;
+}
+
+:focus {
+  outline: none;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}

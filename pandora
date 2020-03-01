@@ -1,0 +1,11 @@
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use PandoraMarketing\Console\{GeneratorFileFuntion, GeneratorFileTemplate};
+use Symfony\Component\Console\Application;
+
+$app = new Application();
+$app->add(new GeneratorFileFuntion());
+$app->add(new GeneratorFileTemplate());
+$app->run();

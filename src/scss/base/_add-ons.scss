@@ -1,0 +1,49 @@
+$colors: (
+  "primary-color": $primary-color,
+  "secondary-color": $secondary-color,
+  "white": $white,
+  "light-gray": $light-gray,
+  "medium-gray": $medium-gray,
+  "dark-gray": $dark-gray,
+  "black": $black,
+);
+
+$fonts-weight: (
+  "font-light": 300,
+  "font-semibold": 500,
+  "font-bold": 700
+);
+
+@each $key, $color in $colors {
+  .#{$key} {
+    color: $color !important;
+  }
+}
+
+@each $key, $font in $fonts-weight {
+  .#{$key} {
+    font-weight: $font !important;
+  }
+}
+
+.font-family-secondary {
+  font-family: $font-family-secondary;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
