@@ -7,7 +7,8 @@
   "scripts": {
     "start": "gulp --env=development",
     "build": "gulp build --env=production",
-    "compress": "gulp compressTheme --env=production"
+    "compress-dist": "gulp compressThemeDist --env=production",
+    "compress-src": "gulp compressThemeSrc --env=production"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
@@ -42,6 +43,6 @@
     "@fancyapps/fancybox": "^3.5.7",
     "foundation-sites": "^6.6.1",
     "jquery": "^3.4.1",
-    "slick-carousel": "^1.8.1"
+    "swiper": "^5.3.6"
   }
 }

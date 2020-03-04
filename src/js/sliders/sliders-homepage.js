@@ -1,5 +1,6 @@
-import $ from "jquery";
-import 'slick-carousel'
+import Swiper from 'swiper'
 
-const sliderHero = $('#slider')
-sliderHero.slick()
+const slider = new Swiper('.swiper-container', {
+  direction: 'horizontal',
+  loop: true,
+})

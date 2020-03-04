@@ -2,8 +2,7 @@
   "entry": {
     "styles": [
       "src/scss/wp_login_styles.scss",
-      "src/scss/main.scss",
-      "src/scss/icon-moon.css"
+      "src/scss/main.scss"
     ],
     "js": [
       "src/js/main.js",
@@ -20,11 +19,19 @@
     "php": "**/*.php"
   },
   "proxy": "http://start-theme.local/",
-  "ignoreFolders": [
+  "ignoreFoldersDevelopment": [
     "src/**/*",
     "!src/config.json",
-    "!src/{images,js,scss,build}",
-    "!src/{images,js,scss,build}/**/*"
+    "!src/{images,scss,js/!(libs),build}",
+    "!src/{images,scss,js/!(libs),build}/**/*"
+  ],
+  "ignoreFoldersProduction": [
+    "src/**/*",
+    "!src/config.json",
+    "!src/{images,scss,js,build}",
+    "!src/{images,scss,js,build}/**/*",
+    "!src/fonts/awesome",
+    "!src/fonts/awesome/**/*"
   ],
   "compressFolder": [
     "**/*",

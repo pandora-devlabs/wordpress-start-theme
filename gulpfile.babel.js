@@ -98,9 +98,9 @@ export const scripts = () => {
  * Copy
  * */
 export const copy = () => {
-  const ignoreFolders = config.ignoreFolders;
+  const ignoreFolders = env === 'production' ? config.ignoreFoldersProduction : config.ignoreFoldersDevelopment ;
 
-  return src(env === 'production' ? ignoreFolders.concat(["!src/fonts/awesome", "!src/fonts/awesome/**/*"]) : ignoreFolders )
+  return src(ignoreFolders)
     .pipe(dest(publicPath()));
 }
 
@@ -125,7 +125,7 @@ export const compress = () => {
 export const watchForChanges = () => {
   watch([config.globalResources.styles], parallel(styles, lintCss))
   watch([config.globalResources.images], series(clean_images, images, reload))
-  watch(config.ignoreFolders, series(copy, reload))
+  watch(config.ignoreFoldersDevelopment, series(copy, reload))
   watch([config.globalResources.js], series(scripts, reload))
   watch([config.globalResources.php], reload);
 }
