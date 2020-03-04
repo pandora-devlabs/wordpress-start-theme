@@ -1,8 +1,8 @@
 <?php
 
-add_action( 'wp_enqueue_scripts', function () {
+$config = require_once get_theme_file_path('config/base.php');
 
-    $config = require_once get_theme_file_path('config/base.php');
+add_action( 'wp_enqueue_scripts', function () use ($config) {
 
     $fa = [
         'handle'    => 'pandoramarketing/fontawesome/base',
@@ -22,7 +22,9 @@ add_action( 'wp_enqueue_scripts', function () {
      */
     register_assets('script', [
         'handle'    => 'pandoramarketing/package/jquery',
-        'src'       => $config['resources']['package_jquery']['cdn'],
+        'src'       => WP_DEBUG
+            ? $config['resources']['package_jquery']['local']
+            : $config['resources']['package_jquery']['cdn'],
         'deps'      => [ ],
         'ver'       => file_version('0.0.1'),
         'in_footer' => true
@@ -132,8 +134,16 @@ add_action( 'wp_enqueue_scripts', function () {
         ]);
 
         register_assets('script', [
-            'handle'    => 'pandoramarketing/package/slick',
-            'src'       => $config['resources']['package_slick'],
+            'handle'    => 'pandoramarketing/package/swiper',
+            'src'       => $config['resources']['package_swiper'],
+            'deps'      => [ ],
+            'ver'       => file_version('0.0.1'),
+            'in_footer' => true
+        ]);
+
+        register_assets('script', [
+            'handle'    => 'pandoramarketing/package/dom7',
+            'src'       => $config['resources']['package_dom7'],
             'deps'      => [ ],
             'ver'       => file_version('0.0.1'),
             'in_footer' => true

@@ -36,15 +36,17 @@ return [
          * Packages
          * */
         'package_jquery' => [
-            'cdn' => 'https://code.jquery.com/jquery-3.1.0.js',
-            'local' => get_theme_file_uri('')
+            'cdn' => 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
+            'local' => get_theme_file_uri('/static/js/libs/jquery/jquery.min.js')
         ],
 
         'package_foundation' => get_theme_file_uri('/static/js/package.foundation-sites.bundle.js'),
 
         'package_fancyapps' => get_theme_file_uri('/static/js/package.fancyapps.bundle.js'),
 
-        'package_slick' => get_theme_file_uri('/static/js/package.slick-carousel.bundle.js'),
+        'package_dom7' => get_theme_file_uri('/static/js/package.dom7.bundle.js'),
+
+        'package_swiper' => get_theme_file_uri('/static/js/package.swiper.bundle.js'),
 
         /**
          * Styles

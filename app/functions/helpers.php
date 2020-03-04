@@ -38,7 +38,7 @@ function register_assets($type, $resource) {
  * Helper | dd();
  * --------------------------------------------------------------------------
  *
- * @param string $variable
+ * @param $variable
  *
  */
 function dd($variable) {
@@ -71,6 +71,30 @@ function dd($variable) {
  */
 function file_version ( $version_file = '0.0.1' ) {
     return WP_DEBUG ? time() : $version_file;
+}
+
+
+/**
+ * --------------------------------------------------------------------------
+ * Helper | Autoload functions custom post type or taxonomy
+ * --------------------------------------------------------------------------
+ *
+ * @param string $path
+ *
+ * @return array
+ *
+ */
+function __autoload_functions_by_dir(String $path) {
+    $dir = scandir(get_template_directory() . $path);
+    $files = [];
+
+    foreach ( $dir as $key => $file ) {
+        if ( ! in_array($file, ['.', '..', '.gitkeep']) ) {
+            $files[] = substr($file, 0, -4);
+        }
+    }
+
+    return $files;
 }
 
 
