@@ -51,7 +51,7 @@ if( function_exists('acf_add_options_page') ) {
     $pm_general_information = acf_add_options_page([
         'page_title'      => 'Información General',
         'menu_title'      => 'Información General',
-        'menu_slug'       => 'options-general',
+        'menu_slug'       => 'theme-general-settings',
         'redirect'        => false, // true
         'icon_url'        => 'dashicons-performance',
         'update_button'   => __('Actulizar', 'acf'),
@@ -61,8 +61,8 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_sub_page([
         'page_title' 	  => 'Configuracion de contacto',
         'menu_title' 	  => 'Contacto',
-        'menu_slug'       => 'options-contact',
-        'post_id'         => 'options-contact',
+        'menu_slug'       => 'theme-info-contact',
+        'post_id'         => 'theme-info-contact',
         'parent_slug' 	  => $pm_general_information['menu_slug'],
         'update_button'   => __('Actulizar', 'acf'),
         'updated_message' => __('Cambios Guardados exitosamente', 'acf')

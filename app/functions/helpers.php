@@ -224,29 +224,6 @@ function numeric_posts_nav() {
 
 /**
  * --------------------------------------------------------------------------
- * Helper | Get Thumbnail
- * --------------------------------------------------------------------------
- *
- * @param $post
- *
- * @return string
- *
- */
-function get_thumbnail_as_background_by_id ($post) {
-    if ( isset($post->ID) ) {
-        if ( get_the_post_thumbnail_url($post->ID) ) {
-            return "background-image: url('" . get_the_post_thumbnail_url($post->ID) . "');";
-        } else {
-            return "background-image: url('" . get_theme_file_uri('static/images/thumbnail-default.jpg') . "');";
-        }
-    } else {
-        return "background-image: url('" . get_theme_file_uri('static/images/thumbnail-default.jpg') . "');";
-    }
-}
-
-
-/**
- * --------------------------------------------------------------------------
  * Helper | Password Form
  * --------------------------------------------------------------------------
  *

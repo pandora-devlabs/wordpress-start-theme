@@ -31,3 +31,5 @@ bundled/
 *.lock
 package-lock.json
 .env
+wordpress/
+app/static/
