@@ -43,6 +43,6 @@
     "@fancyapps/fancybox": "^3.5.7",
     "foundation-sites": "^6.6.1",
     "jquery": "^3.4.1",
-    "swiper": "^5.3.6"
+    "swiper": "^5.4.5"
   }
 }
